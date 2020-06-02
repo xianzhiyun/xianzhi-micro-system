@@ -4,9 +4,15 @@
     "description": "🔥 如何一步步搭建微前端项目",
     "main": "index.js",
     "scripts": {
-        "install": "node config/install.js",
-        "serve": "node config/start.js",
-        "build": "node config/build.js",
+        "deploy": "node script/build.js",
+        "install:micro": "npm-run-all --serial install:*",
+        "dev:micro": "npm-run-all --parallel start:*",
+        "install:main": "cd micro-app-main && npm install",
+        "dev:main": "cd micro-app-main && npm run dev",
+        "install:client": "cd xianzhi-client && npm install",
+        "dev:client": "cd xianzhi-client && npm run dev",
+        "install:sis": "cd xianzhi-sis && npm install",
+        "dev:sis": "cd xianzhi-sis && npm run dev",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
