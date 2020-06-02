@@ -1,0 +1,23 @@
+{
+    "name": "xianzhi-micro-system",
+    "version": "1.0.0",
+    "description": "🔥 如何一步步搭建微前端项目",
+    "main": "index.js",
+    "scripts": {
+        "install": "node config/install.js",
+        "serve": "node config/start.js",
+        "build": "node config/build.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xianzhiyun/xianzhi-micro-system.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/xianzhiyun/xianzhi-micro-system/issues"
+    },
+    "homepage": "https://github.com/xianzhiyun/xianzhi-micro-system#readme"
+}
