@@ -1,31 +1,19 @@
 <template>
-  <div class="dashboard-container">
-    <component :is="currentRole" />
-  </div>
+  <div style="padding: 10px">欢迎小伙伴</div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import adminDashboard from './admin'
-import editorDashboard from './editor'
 
 export default {
   name: 'Dashboard',
-  components: { adminDashboard, editorDashboard },
   data() {
     return {
-      currentRole: 'adminDashboard'
     }
   },
-  computed: {
-    ...mapGetters([
-      'roles'
-    ])
-  },
-  created() {
-    if (!this.roles.includes('admin')) {
-      this.currentRole = 'editorDashboard'
-    }
-  }
+  mounted() {},
+  methods: {}
 }
 </script>
+<style lang="scss" scoped>
+
+</style>
