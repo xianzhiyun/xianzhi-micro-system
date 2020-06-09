@@ -2,13 +2,16 @@
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
       <keep-alive :include="cachedViews">
+        <!-- 挂载节点 -->
         <router-view :key="key" />
       </keep-alive>
     </transition>
+    <!--<section v-show="!$route.name" id="frame" />-->
   </section>
 </template>
 
 <script>
+import startQiankun from '@/micro'
 export default {
   name: 'AppMain',
   computed: {
@@ -18,6 +21,12 @@ export default {
     key() {
       return this.$route.path
     }
+  },
+  mounted() {
+    startQiankun()
+  },
+  methods: {
+
   }
 }
 </script>

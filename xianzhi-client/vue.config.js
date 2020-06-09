@@ -8,36 +8,15 @@ function resolve(dir) {
 
 const name = defaultSettings.title || 'vue Element Admin' // page title
 
-// If your port is set to 80,
-// use administrator privileges to execute the command line.
-// For example, Mac: sudo npm run
-// You can change the port by the following method:
-// port = 9527 npm run dev OR npm run dev --port = 9527
-// const port = process.env.port || process.env.npm_config_port || 9527 // dev port
-
-// All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
-  /**
-   * You will need to set publicPath if you plan to deploy your site under a sub path,
-   * for example GitHub Pages. If you plan to deploy your site to https://foo.github.io/bar/,
-   * then publicPath should be set to "/bar/".
-   * In most cases please use '/' !!!
-   * Detail: https://cli.vuejs.org/config/#publicpath
-   */
-  publicPath: '/',
-  outputDir: 'dist',
-  assetsDir: 'static',
-  lintOnSave: process.env.NODE_ENV === 'development',
-  productionSourceMap: false,
   devServer: {
-    port: 9528,
-    hot: true,
+    // 监听端口
+    port: 10200,
+    // 关闭主机检查，使微应用可以被 fetch
+    disableHostCheck: true,
+    // 配置跨域请求头，解决开发环境的跨域问题
     headers: {
       'Access-Control-Allow-Origin': '*'
-    },
-    overlay: {
-      warnings: false,
-      errors: true
     }
   },
   configureWebpack: {
@@ -48,6 +27,14 @@ module.exports = {
       alias: {
         '@': resolve('src')
       }
+    },
+    output: {
+      // 微应用的包名，这里与主应用中注册的微应用名称一致
+      library: 'VueMicroApp',
+      // 将你的 library 暴露为所有的模块定义下都可运行的方式
+      libraryTarget: 'umd',
+      // 按需加载相关，设置为 webpackJsonp_VueMicroApp 即可
+      jsonpFunction: `webpackJsonp_VueMicroApp`
     }
   },
   chainWebpack(config) {

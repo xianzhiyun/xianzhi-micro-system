@@ -29,7 +29,22 @@ export default {
   components: { SidebarItem, Logo },
   data() {
     return {
-      permission_routes: constantRoutes
+      permission_routes: [
+        {
+          path: '/',
+          children: [
+            {
+              path: 'dashboard',
+              name: 'Dashboard',
+              meta: { title: '首页', icon: 'dashboard', affix: true }
+            }
+          ]
+        },
+        {
+          path: '/client',
+          meta: { title: '客户端', icon: 'dashboard', affix: true }
+        }
+      ]
     }
   },
   computed: {

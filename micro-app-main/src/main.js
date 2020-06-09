@@ -12,10 +12,13 @@ import '@/styles/index.scss' // global css
 
 import App from './App'
 import store from './store'
-import router from './router'
 
-import './icons' // icon
+import { constantRoutes } from './router'
 
+import './icons'
+import Router from 'vue-router' // icon
+Vue.use(Router)
+// import startQiankun from './micro/index'
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium', // set element-ui default size
   locale: enLang // 如果使用中文，无需设置，请删除
@@ -23,8 +26,16 @@ Vue.use(Element, {
 
 Vue.config.productionTip = false
 
+// startQiankun()
+
+const router = new Router({
+  mode: 'history', // require service support
+  scrollBehavior: () => ({ y: 0 }),
+  routes: constantRoutes
+})
+
 new Vue({
-  el: '#app',
+  el: '#main-app',
   router,
   store,
   render: h => h(App)
