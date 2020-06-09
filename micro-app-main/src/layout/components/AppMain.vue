@@ -3,9 +3,10 @@
     <transition name="fade-transform" mode="out-in">
       <keep-alive :include="cachedViews">
         <!-- 挂载节点 -->
-        <router-view :key="key" />
+        <router-view v-show="$route.name" :key="key" />
       </keep-alive>
     </transition>
+    <!-- 子应用挂载节点 -->
     <section v-show="!$route.name" id="frame" />
   </section>
 </template>
