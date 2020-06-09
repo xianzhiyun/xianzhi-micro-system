@@ -17,8 +17,8 @@ import { constantRoutes } from './router'
 
 import './icons'
 import Router from 'vue-router' // icon
+import startQiankun from './micro/index'
 Vue.use(Router)
-// import startQiankun from './micro/index'
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium', // set element-ui default size
   locale: enLang // 如果使用中文，无需设置，请删除
@@ -26,7 +26,7 @@ Vue.use(Element, {
 
 Vue.config.productionTip = false
 
-// startQiankun()
+startQiankun()
 
 const router = new Router({
   mode: 'history', // require service support

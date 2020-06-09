@@ -42,7 +42,13 @@ export default {
         },
         {
           path: '/client',
-          meta: { title: '客户端', icon: 'dashboard', affix: true }
+          children: [
+            {
+              path: 'doc',
+              name: 'Dashboard',
+              meta: { title: '客户端', icon: 'dashboard', affix: true }
+            }
+          ]
         }
       ]
     }

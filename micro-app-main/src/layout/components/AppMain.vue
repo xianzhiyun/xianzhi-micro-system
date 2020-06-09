@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import startQiankun from '@/micro'
 export default {
   name: 'AppMain',
   computed: {
@@ -24,7 +23,6 @@ export default {
     }
   },
   mounted() {
-    startQiankun()
   },
   methods: {
 
