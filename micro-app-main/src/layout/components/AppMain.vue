@@ -6,7 +6,7 @@
         <router-view :key="key" />
       </keep-alive>
     </transition>
-    <!--<section v-show="!$route.name" id="frame" />-->
+    <section v-show="!$route.name" id="frame" />
   </section>
 </template>
 
