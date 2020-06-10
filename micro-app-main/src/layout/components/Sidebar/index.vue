@@ -29,17 +29,7 @@ export default {
   components: { SidebarItem, Logo },
   data() {
     return {
-      permission_routes: [
-        {
-          path: '/',
-          children: [
-            {
-              path: 'dashboard',
-              name: 'Dashboard',
-              meta: { title: '首页', icon: 'dashboard', affix: true }
-            }
-          ]
-        },
+      permission_routes: constantRoutes.concat([
         {
           path: '/client',
           children: [
@@ -49,8 +39,18 @@ export default {
               meta: { title: '客户端', icon: 'dashboard', affix: true }
             }
           ]
-        }
-      ]
+        },
+        {
+          path: '/client/profile',
+          children: [
+            {
+              path: 'index',
+              name: 'Profile',
+              meta: { title: 'Profile', icon: 'user', noCache: true }
+            }
+          ]
+        }]
+      )
     }
   },
   computed: {
