@@ -4,9 +4,7 @@ import {
   start
 } from 'qiankun'
 
-// 子应用注册信息
-import apps from './apps'
-// import apps from "./apps";
+import apps from './apps' // 子应用注册信息
 /**
  * 注册子应用
  * 第一个参数 - 子应用的注册信息

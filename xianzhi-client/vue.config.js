@@ -1,7 +1,8 @@
 'use strict'
+const packageName = require('./package.json').name
 const path = require('path')
 const defaultSettings = require('./src/settings.js')
-
+console.log(`${packageName}-[name]`)
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
@@ -30,11 +31,11 @@ module.exports = {
     },
     output: {
       // 微应用的包名，这里与主应用中注册的微应用名称一致
-      library: 'ClientMicroApp',
+      library: `${packageName}-[name]`,
       // 将你的 library 暴露为所有的模块定义下都可运行的方式
       libraryTarget: 'umd',
-      // 按需加载相关，设置为 webpackJsonp_VueMicroApp 即可
-      jsonpFunction: `webpackJsonp_ClientMicroApp`
+      // 按需加载相关，设置为 webpackJsonp_项目名称 即可
+      jsonpFunction: `webpackJsonp_${packageName}`
     }
   },
   chainWebpack(config) {
