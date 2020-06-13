@@ -10,7 +10,7 @@
 
 <script>
 import DropdownMenu from '@/components/Share/DropdownMenu'
-
+import actions from '@/shared/actions'
 export default {
   name: 'Documentation',
   components: { DropdownMenu },
@@ -28,6 +28,12 @@ export default {
         { title: 'webpack4（下）', href: 'https://juejin.im/post/5b5d6d6f6fb9a04fea58aabc' }
       ]
     }
+  },
+  mounted() {
+    actions.onGlobalStateChange(state => {
+      const { token } = state
+      console.log(`%c 子应用获取到了`, 'font-size: 16px; font-weight: bold;color:green', token)
+    }, true)
   }
 }
 </script>

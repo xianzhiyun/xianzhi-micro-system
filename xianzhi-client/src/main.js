@@ -15,7 +15,7 @@ import store from './store'
 import { constantRoutes } from './router'
 
 import './icons' // icon
-
+import actions from '@/shared/actions'
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium', // set element-ui default size
   locale: enLang // 如果使用中文，无需设置，请删除
@@ -27,8 +27,12 @@ import Router from 'vue-router'
 Vue.config.productionTip = false
 let instance = null
 let router = null
+function render(props) {
+  if (props) {
+    // 注入 actions 实例
+    actions.setActions(props)
+  }
 
-function render() {
   router = new Router({
     base: window.__POWERED_BY_QIANKUN__ ? '/client' : '/',
     mode: 'history', // require service support
