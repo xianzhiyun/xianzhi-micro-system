@@ -24,7 +24,6 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import './public-path'
 import Router from 'vue-router'
-console.log(window.__POWERED_BY_QIANKUN__)
 Vue.config.productionTip = false
 let instance = null
 let router = null
