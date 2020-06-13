@@ -36,7 +36,7 @@ export default {
             {
               path: 'doc',
               name: 'Dashboard',
-              meta: { title: '客户端', icon: 'dashboard', affix: true }
+              meta: { title: '客户端-客户', icon: 'dashboard', affix: true }
             }
           ]
         },
@@ -46,7 +46,7 @@ export default {
             {
               path: 'index',
               name: 'Profile',
-              meta: { title: 'Profile', icon: 'user', noCache: true }
+              meta: { title: '客户端-个人中心', icon: 'user', noCache: true }
             }
           ]
         }]
