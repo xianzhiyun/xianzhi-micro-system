@@ -57,6 +57,11 @@ export const constantRoutes = [
         meta: { title: '客户端-客户', icon: 'user', noCache: true }
       }
     ]
+  },
+  {
+    path: '/login',
+    component: () => import('@/views/login/index'),
+    hidden: true
   }
 ]
 
