@@ -1,4 +1,3 @@
-
 export const constantRoutes = [
   {
     path: '/redirect/:path(.*)',
