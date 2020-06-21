@@ -20,6 +20,10 @@ export const constantRoutes = [
     hidden: true
   },
   {
+    path: '/',
+    redirect: '/dashboard'
+  },
+  {
     path: '/dashboard',
     component: () => import('@/views/dashboard/index'),
     name: 'Dashboard',
