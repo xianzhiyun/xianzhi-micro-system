@@ -10,8 +10,10 @@
     "install:micro": "npm install",
     "install:main": "cd micro-app-main && npm install",
     "dev:main": "cd micro-app-main && npm run dev",
+    "build:main": "cd micro-app-main && npm run build:prod",
     "install:client": "cd xianzhi-client && npm install",
     "dev:client": "cd xianzhi-client && npm run dev",
+    "build:client": "cd xianzhi-client && npm run build:prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

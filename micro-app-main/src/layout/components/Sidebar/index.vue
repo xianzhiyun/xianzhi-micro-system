@@ -24,35 +24,13 @@ import Logo from './Logo'
 import SidebarItem from './SidebarItem'
 import variables from '@/styles/variables.scss'
 import { constantRoutes } from '@/router'
+import { appsMains } from '@/micro/apps-menu'
 
 export default {
   components: { SidebarItem, Logo },
   data() {
     return {
-      permission_routes: constantRoutes.concat(
-        [
-          {
-            path: '/client',
-            children: [
-              {
-                path: 'doc',
-                name: 'Dashboard',
-                meta: { title: '客户端-文档', icon: 'dashboard', affix: true }
-              }
-            ]
-          },
-          {
-            path: '/client/profile',
-            children: [
-              {
-                path: 'index',
-                name: 'Profile',
-                meta: { title: '客户端-个人中心', icon: 'user', noCache: true }
-              }
-            ]
-          }
-        ]
-      )
+      permission_routes: constantRoutes.concat(appsMains)
     }
   },
   computed: {
