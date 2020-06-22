@@ -21,7 +21,6 @@ export default {
     actions.onGlobalStateChange(state => {
       const { token } = state
       this.token = token
-      console.log(`%c 子应用获取到了`, 'font-size: 16px; font-weight: bold;color:green', token)
     }, true)
   }
 }
