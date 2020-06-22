@@ -1,7 +1,8 @@
 <template>
   <div class="app-container">
     <h1>个人中心页面</h1>
-    <div>token: {{ token || '暂无' }}</div>
+    <div>接受主应用的消息: {{ token || '暂无' }}</div>
+    <div>获取本地localstorage: {{ userInfo.username || '暂无' }}</div>
   </div>
 </template>
 
@@ -12,7 +13,8 @@ export default {
   name: 'Profile',
   data() {
     return {
-      token: null
+      token: null,
+      userInfo: JSON.parse(localStorage.getItem('userInfo'))
     }
   },
   mounted() {

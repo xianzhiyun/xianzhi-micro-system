@@ -54,7 +54,7 @@ export const constantRoutes = [
         path: 'index',
         component: () => import('@/views/profile/index'),
         name: 'Profile',
-        meta: { title: '客户端-客户', icon: 'user', noCache: true }
+        meta: { title: '客户端-个人中心', icon: 'user', noCache: true }
       }
     ]
   },

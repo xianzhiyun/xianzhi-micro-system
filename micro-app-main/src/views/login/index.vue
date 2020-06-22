@@ -153,23 +153,17 @@ export default {
       })
     },
     handleLogin() {
-      // this.$refs.loginForm.validate(valid => {
-      //   if (valid) {
-      //     this.loading = true
-      //     this.$store.dispatch('user/login', this.loginForm)
-      //       .then(() => {
-      //         this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
-      //         this.loading = false
-      //       })
-      //       .catch(() => {
-      //         this.loading = false
-      //       })
-      //   } else {
-      //     console.log('error submit!!')
-      //     return false
-      //   }
-      // })
-      this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
+      this.$refs.loginForm.validate(valid => {
+        if (valid) {
+          this.loading = true
+          window.localStorage.setItem('userInfo', JSON.stringify(this.loginForm))
+          window.localStorage.setItem('Admin-Token', `Bearer ${new Date().getDate()}`)
+          this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      })
     },
     getOtherQuery(query) {
       return Object.keys(query).reduce((acc, cur) => {

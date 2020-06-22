@@ -2,7 +2,10 @@
   <div style="padding: 10px">
     <h1>欢迎小伙伴- 我是主应用</h1>
     <div>
-      <el-button type="primary" size="small" @click="login">登录</el-button>
+      <div>
+        name: {{ userInfo.username || '-' }}
+      </div>
+      <el-button style="margin-top: 10px" type="primary" size="small" @click="sendToChildren">发消息给子应用消息</el-button>
     </div>
   </div>
 </template>
@@ -12,7 +15,9 @@ import actions from '@/shared/actions'
 export default {
   name: 'Dashboard',
   data() {
-    return {}
+    return {
+      userInfo: JSON.parse(localStorage.getItem('userInfo'))
+    }
   },
   mounted() {
     // 注册一个观察者函数
@@ -23,8 +28,8 @@ export default {
     })
   },
   methods: {
-    login() {
-      const token = 'hello world'
+    sendToChildren() {
+      const token = new Date().getTime()
       window.localStorage.setItem('token', token)
       actions.setGlobalState({ token })
     }

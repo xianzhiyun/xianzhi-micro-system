@@ -37,7 +37,7 @@ export default {
               {
                 path: 'doc',
                 name: 'Dashboard',
-                meta: { title: '客户端-客户', icon: 'dashboard', affix: true }
+                meta: { title: '客户端-文档', icon: 'dashboard', affix: true }
               }
             ]
           },
