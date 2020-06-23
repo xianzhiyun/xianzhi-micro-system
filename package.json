@@ -6,7 +6,7 @@
   "scripts": {
     "dev-all": "npm-run-all --parallel dev:*",
     "install-all": "npm-run-all --serial install:*",
-    "build-all": "npm-run-all --parallel build:*",
+    "build-all": "npm-run-all --parallel build:* && node ./config/build.js",
     "install:micro": "npm install",
     "install:main": "cd micro-app-main && npm install",
     "dev:main": "cd micro-app-main && npm run dev",
